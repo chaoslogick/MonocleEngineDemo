@@ -1,14 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+
 using MonocleDemoNamespace.Logic;
 using MonocleDemoNamespace.Scenes.Menus;
+
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
+
 using Monocle;
 
 namespace MonocleDemoNamespace
@@ -20,9 +23,9 @@ namespace MonocleDemoNamespace
     {
         public MonoDemo() : base(1280, 720, 640, 360, "MonocleEngine Test", false)
         {
-            Engine.ClearColor = Color.CornflowerBlue;
+            Engine.ClearColor = Color.DarkTurquoise;
             Content.RootDirectory = "Content";
-            ViewPadding = -32;
+            ViewPadding = -64;
         }
 
         /// <summary>

@@ -47,21 +47,21 @@ namespace Monocle
         private int fpsCounter = 0;
 
         // content directory
-#if !CONSOLE
+        #if !CONSOLE
         private static string AssemblyDirectory = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
-#endif
+        #endif
 
         public static string ContentDirectory
         {
-#if PS4
+          #if PS4
             get { return Path.Combine("/app0/", Instance.Content.RootDirectory); }
-#elif NSWITCH
+          #elif NSWITCH
             get { return Path.Combine("rom:/", Instance.Content.RootDirectory); }
-#elif XBOXONE
+          #elif XBOXONE
             get { return Instance.Content.RootDirectory; }
-#else
+          #else
             get { return Path.Combine(AssemblyDirectory, Instance.Content.RootDirectory); }
-#endif
+          #endif
         }
 
         // util
@@ -91,13 +91,13 @@ namespace Monocle
             Graphics.PreferredDepthStencilFormat = DepthFormat.Depth24Stencil8;
             Graphics.ApplyChanges();
 
-#if PS4 || XBOXONE
+          #if PS4 || XBOXONE
             Graphics.PreferredBackBufferWidth = 1920;
             Graphics.PreferredBackBufferHeight = 1080;
-#elif NSWITCH
+          #elif NSWITCH
             Graphics.PreferredBackBufferWidth = 1280;
             Graphics.PreferredBackBufferHeight = 720;
-#else
+          #else
             Window.AllowUserResizing = true;
             Window.ClientSizeChanged += OnClientSizeChanged;
 
@@ -124,7 +124,7 @@ namespace Monocle
             GCSettings.LatencyMode = GCLatencyMode.SustainedLowLatency;
         }
 
-#if !CONSOLE
+        #if !CONSOLE
         protected virtual void OnClientSizeChanged(object sender, EventArgs e)
         {
             if (Window.ClientBounds.Width > 0 && Window.ClientBounds.Height > 0 && !resizing)
@@ -138,7 +138,7 @@ namespace Monocle
                 resizing = false;
             }
         }
-#endif
+        #endif
 
         protected virtual void OnGraphicsReset(object sender, EventArgs e)
         {

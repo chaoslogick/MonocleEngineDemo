@@ -14,7 +14,7 @@ namespace MonocleDemoNamespace.Scenes.Menus
     {
         Camera camera; // Camera handler (so that we can modify it's paramteres when needed, like zoom)
         Dummy dum; // Dummy
-        int dummyMove = 4; // Dummy movement speed
+        int dummyMove = 3; // Dummy movement speed
 
         public InitScene() : base()
         {}
@@ -28,9 +28,9 @@ namespace MonocleDemoNamespace.Scenes.Menus
             Add(er);
 
             // Setup the camera
-            camera = new Camera(640, 360);
+            camera = new Camera(800, 420);
             camera.CenterOrigin();
-            camera.Zoom = 1.5f;
+            camera.Zoom = 1f;
             er.Camera = camera; // Attach the new camera to the EverythingRenderer
 
             // Create the dummy

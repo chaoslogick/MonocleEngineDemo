@@ -3,10 +3,10 @@ Add here all the sprites that you are going to use them in your game.
 -->
 
 <Sprites>
-  
+
   <player path="base_cubes/"  start="idle">
     <Center/>
-    <Anim id="idle" path="red_base"/>
+    <Anim id="idle" path="white_base"/>
     <Anim id="move" path="green_base" delay="0.38" goto="idle"/>
   </player>
 
@@ -14,5 +14,5 @@ Add here all the sprites that you are going to use them in your game.
     <Center/>
     <Anim id="default" path="black_base"/>
   </wall>
-  
+
 </Sprites>
